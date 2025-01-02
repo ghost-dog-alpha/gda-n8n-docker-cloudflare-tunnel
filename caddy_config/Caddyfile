@@ -1,0 +1,29 @@
+{env.N8N_HOST} {
+    reverse_proxy n8n:{env.N8N_PORT} {
+        flush_interval -1
+    }
+
+    tls {
+        dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+    }
+}
+
+{env.WEBHOOK_INTERNAL_HOST} {
+    @allowedpaths  {
+        path /webhook-test/* /webhook/*
+    }
+
+    @notallowedpaths {
+        not path /webhook-test/* /webhook/*
+    }
+
+    respond @notallowedpaths "Access Denied" 403
+
+    reverse_proxy allowedpaths n8n:{env.N8N_PORT} {
+        flush_interval -1
+    }
+
+    tls {
+        dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+    }
+}
