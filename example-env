@@ -1,5 +1,5 @@
 # Replace <directory-path> with the path where you created folders earlier
-DATA_FOLDER=/<directory-path>/n8n-docker-caddy
+DATA_FOLDER=/<directory-path>
 
 # The host to serve from this will need to be acessible from every environment
 # where you want to access the n8n editor
