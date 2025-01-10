@@ -21,6 +21,7 @@ services:
       - SSL_EMAIL=${SSL_EMAIL}
     volumes:
       - caddy_data:/data
+      - ${WORK_VOLUME}:/work
       - ${DATA_FOLDER}/caddy_config:/config
       - ${DATA_FOLDER}/caddy_config/Caddyfile:/etc/caddy/Caddyfile
 
@@ -38,10 +39,13 @@ services:
       - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
     volumes:
       - n8n_data:/home/node/.n8n
+      - ${WORK_VOLUME}:/work
       - ${DATA_FOLDER}/local_files:/files
 
 volumes:
   caddy_data:
     external: true
   n8n_data:
+    external: true
+  ${WORK_VOLUME}:
     external: true
