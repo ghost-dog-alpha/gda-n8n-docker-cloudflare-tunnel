@@ -21,7 +21,6 @@ services:
       - SSL_EMAIL=${SSL_EMAIL}
     volumes:
       - caddy_data:/data
-      - ${WORK_VOLUME}:/work
       - ${DATA_FOLDER}/caddy_config:/config
       - ${DATA_FOLDER}/caddy_config/Caddyfile:/etc/caddy/Caddyfile
 
