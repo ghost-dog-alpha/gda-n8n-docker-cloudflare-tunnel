@@ -12,10 +12,6 @@ N8N_PORT=5678
 # as seen from the outside world
 WEBHOOK_HOST=webhooks.example.com
 
-# The N8N Webhook host to use for webhook triggers
-# as seen from the inside of your network (if the same, just copy from above)
-WEBHOOK_INTERNAL_HOST=webhooks.example.net
-
 # Optional timezone to set which gets used by Cron-Node by default
 # If not set New York time will be used
 GENERIC_TIMEZONE=America/Chicago

@@ -1,6 +1,6 @@
 services:
   tunnel:
-    image: cloudflare/cloudflared
+    image: cloudflare/cloudflared:latest
     restart: unless-stopped
     command: tunnel run
     environment:
@@ -15,7 +15,7 @@ services:
     environment:
       - ACME_AGREE=true
       - N8N_HOST=${N8N_HOST}
-      - WEBHOOK_INTERNAL_HOST=${WEBHOOK_INTERNAL_HOST}
+      - WEBHOOK_HOST=${WEBHOOK_HOST}
       - N8N_PORT=${N8N_PORT}
       - CLOUDFLARE_API_TOKEN=${CLOUDFLARE_API_TOKEN}
       - SSL_EMAIL=${SSL_EMAIL}

@@ -8,7 +8,7 @@
     }
 }
 
-{env.WEBHOOK_INTERNAL_HOST} {
+{env.WEBHOOK_HOST} {
     @allowedpaths  {
         path /webhook-test/* /webhook/*
     }
